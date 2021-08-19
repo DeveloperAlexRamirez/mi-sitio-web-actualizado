@@ -1,0 +1,152 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #191919;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.imgBanner {
+  height: 40vh;
+  width: 100%;
+  background-image: url('../public/banner.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  /* background-attachment: fixed; */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media screen and (min-width: 768px) {
+  .imgBanner {
+    height: 60vh;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .imgBanner {
+    height: 100vh;
+  }
+}
+
+.nav-menu {
+  background-color: black;
+  width: 25vh;
+  /* width: 100%; */
+  display: flex;
+  height: 100vh;
+  position: absolute;
+  justify-content: center;
+  top: 0;
+  right: -100%;
+  transition: 700ms;
+}
+
+.nav-menu.active {
+  right: 0;
+  transition: 350ms;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-menu.active {
+    display: none;
+  }
+}
+
+.typing-demo {
+  width: 17.2ch;
+  animation: typing 2s steps(30), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  height: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 3.5rem;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .typing-demo {
+    width: 17.1ch;
+    font-size: 3rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (min-width: 1636px) {
+  .typing-demo {
+    width: 17.1ch;
+    font-size: 4rem;
+    height: 3rem;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.textoPrincipal {
+  color: #30d3f0;
+  margin-top: 0px;
+}
+
+@media screen and (min-width: 1024px) {
+  .textoPrincipal {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .textoPrincipal {
+    margin-top: 30px;
+  }
+}
+
+.personal-img {
+  border-radius: 1000px;
+  background-image: url('../public/personal-photo.jpeg');
+  width: 250px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.img-proyecto {
+  width: 100%;
+}
+
+.img-framework {
+  width: 100%;
+  height: 100%;
+}
