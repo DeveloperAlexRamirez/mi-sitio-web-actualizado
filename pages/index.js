@@ -67,7 +67,7 @@ const Home = () => {
   return (
     <div>
       <Head>
-        <title>Alex | Developer</title>
+        <title>Alex | Inicio</title>
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
           rel="stylesheet"

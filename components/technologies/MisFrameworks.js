@@ -5,10 +5,11 @@ import {
   Title,
   DescripcionCard,
 } from '../services/MisServicios';
+import Link from 'next/link';
 
 const CustomDescripcionCard = styled(DescripcionCard)`
   text-align: center;
-  padding: unset;
+  padding: 1rem;
 
   @media screen and (min-width: 768px) {
     padding-left: 2rem;
@@ -37,7 +38,7 @@ const MisFrameworks = () => {
   const { frameworks, isloading } = useFrameworks();
 
   if (isloading) {
-    return <p>Loading...</p>;
+    return null;
   }
 
   return (
@@ -53,7 +54,7 @@ const MisFrameworks = () => {
           return (
             <Card key={f.id}>
               <img
-                src={`http://localhost:1337${f.Tecnologia[0].url}`}
+                src={`https://mi-app-strapi-heroku.herokuapp.com${f.Tecnologia[0].url}`}
                 alt={f.Nombre}
                 className="img-framework"
               />

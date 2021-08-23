@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export const strapiDB = axios.create({
-  baseURL: 'http://localhost:1337',
+  baseURL: 'https://mi-app-strapi-heroku.herokuapp.com',
 });

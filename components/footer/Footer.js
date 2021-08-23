@@ -17,7 +17,7 @@ const CardFooter = styled.div`
   justify-content: center;
 `;
 
-const Footer = () => {
+const Footer = (props) => {
   const year = new Date().getFullYear();
 
   return (
@@ -35,6 +35,7 @@ const Footer = () => {
           ))}
         </CardFooter>
       </ContenedorFooter>
+      <main>{props.children}</main>
     </ContainerSupremo>
   );
 };

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import myImage from '../../public/banner.jpeg';
 import styled from '@emotion/styled';
 
 const ContainerText = styled.div`
@@ -7,21 +6,22 @@ const ContainerText = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  /* margin: 0 auto; */height
-  font-family: 'Montserrat', sans-serif;
+  /* margin: 0 auto; */
+  font-family: 'Poppins', sans-serif;
   /* padding-bottom: 7rem; */
   padding-left: 0rem;
-  line-height: 22px;
+  line-height: 12px;
   font-size: 1rem;
-  
 
   @media (min-width: 660px) {
     font-size: 1.5rem;
+
     padding-left: 10rem;
     width: 80%;
   }
-  
+
   @media (min-width: 1280px) {
+    line-height: 22px;
     font-size: 2.5rem;
     align-items: flex-start;
   }

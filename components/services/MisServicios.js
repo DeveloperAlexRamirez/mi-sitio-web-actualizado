@@ -27,7 +27,7 @@ export const ContenedorCards = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 2rem;
   max-width: 1220px;
   margin: 0 auto;
 
@@ -51,12 +51,10 @@ export const Card = styled.div`
   justify-content: center;
   transition: 300ms;
 
-  @media screen and (min-width: 820px) {
-    flex-basis: calc(33% - 1rem);
-    margin-bottom: unset;
-  }
-
   @media screen and (max-width: 580px) {
+    padding: 1rem;
+    height: 200px;
+
     background-image: -webkit-gradient(
       linear,
       left top,
@@ -67,6 +65,11 @@ export const Card = styled.div`
     background-image: -webkit-linear-gradient(left, #2dd2f7, #2a70e0);
     background-image: -moz-linear-gradient(left, #2dd2f7, #2a70e0);
     background-image: linear-gradient(90deg, #2dd2f7, #2a70e0);
+  }
+
+  @media screen and (min-width: 820px) {
+    flex-basis: calc(33% - 1rem);
+    margin-bottom: unset;
   }
 
   :hover {

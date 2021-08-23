@@ -145,8 +145,8 @@ const Formulario = () => {
         <ContainerSubtitulo>
           <Subtitulo>
             Estoy disponible para trabajar como freelancer. Conéctate conmigo
-            por correo electrónico: prueba@prueba.com o por WhatsApp:
-            (322)-129-2482
+            por correo electrónico: <b>alexkey0516@gmail.com</b> o por WhatsApp:
+            <b>(322)-129-2482</b>
           </Subtitulo>
         </ContainerSubtitulo>
 
@@ -169,7 +169,7 @@ const Formulario = () => {
                 name="email"
                 value={email}
                 onChange={handleChange}
-                placeholder="Email"
+                placeholder="Tu Correo"
               />
             </CamposContact>
 

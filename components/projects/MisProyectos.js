@@ -1,13 +1,15 @@
 import styled from '@emotion/styled';
 import { useProyectos } from '../../hooks/useProyectos';
 
-import bebidasapp from '../../public/example.png';
-
 import {
   ContenedorCards,
   DescripcionCard,
   Title,
 } from '../services/MisServicios';
+
+import Link from 'next/link';
+import ReactLoading from 'react-loading';
+import Loading from '../helpers/Loading';
 
 const ContainerSupremo = styled.div`
   padding-top: 2rem;
@@ -26,7 +28,7 @@ const CustomContenedorCards = styled(ContenedorCards)`
   justify-content: center;
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: calc(100% - 1rem);
@@ -80,12 +82,11 @@ export const Button = styled.button`
 `;
 
 const MisProyectos = () => {
-  const { proyectos, isloading } = useProyectos();
+  const { proyectos, isloading, id } = useProyectos();
 
   if (isloading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
-  // console.log(img.Imagen[0].url))
 
   return (
     <ContainerSupremo id="mis-proyectos">
@@ -94,15 +95,23 @@ const MisProyectos = () => {
         Estos son algunos de los proyectos que he realizado.
       </CustomTextoDescripcionCard>
       <CustomContenedorCards>
-        {proyectos.map((img) => {
+        {proyectos.map((proyecto, index) => {
           return (
-            <Card key={img.Imagen[0].url}>
+            <Card key={proyecto.Imagen[0].url}>
               <img
-                src={`http://localhost:1337${img.Imagen[0].url}`}
-                alt={img.Imagen[0].url}
+                src={`https://mi-app-strapi-heroku.herokuapp.com${proyecto.Imagen[0].url}`}
+                alt={proyecto.Imagen[0].url}
                 className="img-proyecto"
               />
-              <Button>Detalles</Button>
+              <Link
+                href={{
+                  pathname: '/proyecto/[id]',
+                  query: { id: proyecto.id },
+                }}
+                as={`/proyecto/${proyecto.id}`}
+              >
+                <Button>Detalles</Button>
+              </Link>
             </Card>
           );
         })}

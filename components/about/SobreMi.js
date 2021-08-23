@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
-import photoPersonal from '../../public/personal-photo.jpeg';
 import SkillsCertificados from './SkillsCertificados';
 
 const DivSupremo = styled.div`
@@ -55,6 +54,16 @@ const LetrasSobreMi = styled.p`
   text-align: justify;
 `;
 
+const ContainerImgPersonal = styled.div`
+  padding: unset;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  @media screen and (min-width: 1024px) {
+    padding: 3rem;
+  }
+`;
+
 const SobreMi = () => {
   const [skills, setsKills] = useState(true);
 
@@ -63,23 +72,23 @@ const SobreMi = () => {
   return (
     <DivSupremo id="acerca-de">
       <Container>
-        <div style={{ padding: '3rem' }}>
+        <ContainerImgPersonal>
           <div className="personal-img" />
-        </div>
+        </ContainerImgPersonal>
 
         <DivTextoSobreMi>
           <Titulo>Sobre mi</Titulo>
           <LetrasSobreMi>
             Soy un desarrollador front-end de Jalisco, México. Últimamente me
             encuentro trabajando en React Native, y otras tecnologías
-            desarrollando apliaciones y proyectos personales. Mi lenguaje
+            desarrollando aplicaciones y proyectos personales. Mi lenguaje
             favorito es Javascript pero tengo conocimientos en java y otros
-            frameworks como vue así como también sé bases de datos sql y no sql.
+            frameworks como vue, así como también sé bases de datos sql y no
+            sql.
           </LetrasSobreMi>
 
           <div style={{ display: 'flex', flexDirection: 'row' }}>
             <Skils>Skills</Skils>
-            <Skils>Educación y Certificación</Skils>
           </div>
 
           <SkillsCertificados />
