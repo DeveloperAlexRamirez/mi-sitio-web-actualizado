@@ -11,7 +11,6 @@ import {
 import Link from 'next/link';
 import ReactLoading from 'react-loading';
 import Loading from '../helpers/Loading';
-import { proyectosDB } from './proyectosDB';
 import Image from 'next/image';
 import bebidas from '../../public/assets/proyectos/bebidas/img-principal.png';
 import veterinaria from '../../public/assets/proyectos/veterinaria/img-principal.png';

@@ -28,7 +28,7 @@ export const redes = [
   },
 
   {
-    url: '',
+    url: 'https://www.instagram.com/alexramirezrodriguez5/',
     target: '_blank',
     icon: (
       <AiIcons.AiFillInstagram
