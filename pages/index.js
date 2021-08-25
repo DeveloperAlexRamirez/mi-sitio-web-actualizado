@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css';
-import Layout from '../components/layout/Layout';
 import Head from 'next/head';
+import Layout from '../components/layout/Layout';
 import BannerImg from '../components/layout/BannerImg';
 import SobreMi from '../components/about/SobreMi';
 import MisServicios from '../components/services/MisServicios';

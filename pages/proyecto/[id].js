@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import Footer from '../../components/footer/Footer';
 import Loading from '../../components/helpers/Loading';
 import Layout from '../../components/layout/Layout';
+import { proyectosDB } from '../../components/projects/proyectosDB';
 import {
   ContainerSupremo,
   ContenedorCards,
@@ -93,6 +94,7 @@ const DivIconCategoria = styled.div`
 `;
 
 const index = () => {
+  //
   const [proyecto, setProyecto] = useState('');
   const [isloading, setIsLoading] = useState(true);
 
@@ -134,7 +136,6 @@ const index = () => {
       <Head>
         <title>Alex | Proyectos</title>
       </Head>
-      {/* Loading blue */}
       <Layout>
         <ContainerSupremo>
           <Header>
@@ -149,7 +150,7 @@ const index = () => {
             <H3>Categoría</H3>
             <BCategoria>{categorias[0].Nombre}</BCategoria>
             <div style={{ flexDirection: 'row' }}>
-              {categorias.map((c, i) => (
+              {/* {categorias.map((c, i) => (
                 <img
                   src={`${pathStrapi}${c.Tecnologia[0].url}`}
                   alt={c.id}
@@ -157,7 +158,12 @@ const index = () => {
                   key={c.id}
                   style={{ marginRight: '6px' }}
                 />
-              ))}
+              ))} */}
+
+              {/* TODO: corregir ya que queremos las imagenes de galeria */}
+              {proyectosDB.map((c, i) => {
+                console.log(c);
+              })}
             </div>
           </ContenedorDetalles>
 

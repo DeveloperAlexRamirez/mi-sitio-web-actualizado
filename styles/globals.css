@@ -66,7 +66,7 @@ a {
 }
 
 .typing-demo {
-  width: 17.2ch;
+  width: 18.2ch;
   animation: typing 2s steps(30), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
@@ -103,7 +103,7 @@ a {
 
 @media screen and (min-width: 1636px) {
   .typing-demo {
-    width: 17.1ch;
+    width: 21.3ch;
     font-size: 4rem;
     height: 3rem;
   }

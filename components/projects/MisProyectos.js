@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useProyectos } from '../../hooks/useProyectos';
+import { useEffect, useState } from 'react';
 
 import {
   ContenedorCards,
@@ -10,6 +11,16 @@ import {
 import Link from 'next/link';
 import ReactLoading from 'react-loading';
 import Loading from '../helpers/Loading';
+import { proyectosDB } from './proyectosDB';
+import Image from 'next/image';
+import bebidas from '../../public/assets/proyectos/bebidas/img-principal.png';
+import veterinaria from '../../public/assets/proyectos/veterinaria/img-principal.png';
+import embriagapp from '../../public/assets/proyectos/embriagApp/img-principal.png';
+import pokedex from '../../public/assets/proyectos/pokedex/img-principal.png';
+
+import reactNative from '../../public/tecnologias/react-native.png';
+import react from '../../public/tecnologias/react.png';
+import ts from '../../public/tecnologias/ts.png';
 
 const ContainerSupremo = styled.div`
   padding-top: 2rem;
@@ -81,7 +92,17 @@ export const Button = styled.button`
   }
 `;
 
+const ContenedorCategoria = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1rem;
+`;
+
 const MisProyectos = () => {
+  const [otrosproyectos, setOtrosproyectos] = useState([]);
+
   const { proyectos, isloading, id } = useProyectos();
 
   if (isloading) {
@@ -95,26 +116,58 @@ const MisProyectos = () => {
         Estos son algunos de los proyectos que he realizado.
       </CustomTextoDescripcionCard>
       <CustomContenedorCards>
-        {proyectos.map((proyecto, index) => {
+        <Card>
+          <Image src={bebidas} alt={bebidas} />
+          <ContenedorCategoria>
+            <div>
+              <Image src={react} width={40} height={45} />
+            </div>
+          </ContenedorCategoria>
+        </Card>
+
+        <Card>
+          <Image src={veterinaria} alt={veterinaria} />
+          <ContenedorCategoria>
+            <div>
+              <Image src={react} width={40} height={45} />
+            </div>
+          </ContenedorCategoria>
+        </Card>
+
+        <Card>
+          <Image src={embriagapp} alt={embriagapp} />
+          <ContenedorCategoria>
+            <div>
+              <Image src={reactNative} width={40} height={40} />
+              <Image src={ts} width={40} height={40} />
+            </div>
+          </ContenedorCategoria>
+        </Card>
+
+        <Card>
+          <Image src={pokedex} alt={pokedex} />
+          <ContenedorCategoria>
+            <div>
+              <Image src={reactNative} width={40} height={40} />
+              <Image src={ts} width={40} height={40} />
+            </div>
+          </ContenedorCategoria>
+        </Card>
+
+        {/* {proyectos.map((proyecto, index) => {
           return (
-            <Card key={proyecto.Imagen[0].url}>
-              <img
-                src={`https://mi-app-strapi-heroku.herokuapp.com${proyecto.Imagen[0].url}`}
-                alt={proyecto.Imagen[0].url}
-                className="img-proyecto"
-              />
-              <Link
-                href={{
-                  pathname: '/proyecto/[id]',
-                  query: { id: proyecto.id },
-                }}
-                as={`/proyecto/${proyecto.id}`}
-              >
-                <Button>Detalles</Button>
-              </Link>
-            </Card>
+            <Link
+              key={index}
+              href={{
+                pathname: '/proyecto/[id]',
+                query: { id: proyecto.id },
+              }}
+              as={`/proyecto/${proyecto.id}`}
+            >
+              <Button>Detalles</Button>
+            </Link>
           );
-        })}
+        })} */}
       </CustomContenedorCards>
     </ContainerSupremo>
   );

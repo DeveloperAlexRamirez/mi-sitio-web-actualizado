@@ -27,7 +27,7 @@ const ContainerText = styled.div`
   }
 `;
 
-const textoPrincipal = `\n</Web developer>`;
+const textoPrincipal = `\n</Frontend developer>`;
 const textoSecundario = `<Mobile developer />`;
 
 const BannerImg = () => {
