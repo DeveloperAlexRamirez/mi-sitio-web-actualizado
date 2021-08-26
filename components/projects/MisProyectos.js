@@ -102,11 +102,11 @@ const ContenedorCategoria = styled.div`
 const MisProyectos = () => {
   const [otrosproyectos, setOtrosproyectos] = useState([]);
 
-  const { proyectos, isloading, id } = useProyectos();
+  // const { proyectos, isloading, id } = useProyectos();
 
-  if (isloading) {
-    return <Loading />;
-  }
+  // if (isloading) {
+  //   return <Loading />;
+  // }
 
   return (
     <ContainerSupremo id="mis-proyectos">
