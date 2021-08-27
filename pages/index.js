@@ -72,6 +72,7 @@ const Home = () => {
           href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
           rel="stylesheet"
         />
+        <meta name="theme-color" content="#000000" />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
           rel="stylesheet"

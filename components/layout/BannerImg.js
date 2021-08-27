@@ -11,7 +11,7 @@ const ContainerText = styled.div`
   /* padding-bottom: 7rem; */
   padding-left: 0rem;
   line-height: 12px;
-  font-size: 1rem;
+  font-size: 0.9rem;
 
   @media (min-width: 660px) {
     font-size: 1.5rem;
