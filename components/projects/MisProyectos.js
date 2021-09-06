@@ -12,14 +12,6 @@ import Link from 'next/link';
 import ReactLoading from 'react-loading';
 import Loading from '../helpers/Loading';
 import Image from 'next/image';
-import bebidas from '../../public/assets/proyectos/bebidas/img-principal.png';
-import veterinaria from '../../public/assets/proyectos/veterinaria/img-principal.png';
-import embriagapp from '../../public/assets/proyectos/embriagApp/img-principal.png';
-import pokedex from '../../public/assets/proyectos/pokedex/img-principal.png';
-
-import reactNative from '../../public/tecnologias/react-native.png';
-import react from '../../public/tecnologias/react.png';
-import ts from '../../public/tecnologias/ts.png';
 
 const ContainerSupremo = styled.div`
   padding-top: 2rem;
@@ -50,11 +42,6 @@ export const Card = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  transition: 300ms;
-
-:hover {
-    transform: translateY(-3px);
-  }
 
  @media screen and (min-width:768px){
    flex-basis: calc(50% - 1rem);
@@ -99,14 +86,16 @@ const ContenedorCategoria = styled.div`
   padding: 1rem;
 `;
 
+const ImageProject = styled.image``;
+
 const MisProyectos = () => {
   const [otrosproyectos, setOtrosproyectos] = useState([]);
 
-  // const { proyectos, isloading, id } = useProyectos();
+  const { proyectos, isloading, id } = useProyectos();
 
-  // if (isloading) {
-  //   return <Loading />;
-  // }
+  if (isloading) {
+    return <Loading />;
+  }
 
   return (
     <ContainerSupremo id="mis-proyectos">
@@ -114,59 +103,20 @@ const MisProyectos = () => {
       <CustomTextoDescripcionCard>
         Estos son algunos de los proyectos que he realizado.
       </CustomTextoDescripcionCard>
+
       <CustomContenedorCards>
-        <Card>
-          <Image src={bebidas} alt={bebidas} />
-          <ContenedorCategoria>
-            <div>
-              <Image src={react} width={40} height={45} />
-            </div>
-          </ContenedorCategoria>
-        </Card>
-
-        <Card>
-          <Image src={veterinaria} alt={veterinaria} />
-          <ContenedorCategoria>
-            <div>
-              <Image src={react} width={40} height={45} />
-            </div>
-          </ContenedorCategoria>
-        </Card>
-
-        <Card>
-          <Image src={embriagapp} alt={embriagapp} />
-          <ContenedorCategoria>
-            <div>
-              <Image src={reactNative} width={40} height={40} />
-              <Image src={ts} width={40} height={40} />
-            </div>
-          </ContenedorCategoria>
-        </Card>
-
-        <Card>
-          <Image src={pokedex} alt={pokedex} />
-          <ContenedorCategoria>
-            <div>
-              <Image src={reactNative} width={40} height={40} />
-              <Image src={ts} width={40} height={40} />
-            </div>
-          </ContenedorCategoria>
-        </Card>
-
-        {/* {proyectos.map((proyecto, index) => {
+        {proyectos.map((proyecto, index) => {
           return (
-            <Link
-              key={index}
-              href={{
-                pathname: '/proyecto/[id]',
-                query: { id: proyecto.id },
-              }}
-              as={`/proyecto/${proyecto.id}`}
-            >
-              <Button>Detalles</Button>
-            </Link>
+            <Card key={index}>
+              <img src={proyecto.Imagen[0].url} className="img-proyecto" />
+              <Link href={`/proyecto/${proyecto.id}`}>
+                <Button>
+                  <a>Detalles</a>
+                </Button>
+              </Link>
+            </Card>
           );
-        })} */}
+        })}
       </CustomContenedorCards>
     </ContainerSupremo>
   );

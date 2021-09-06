@@ -68,11 +68,13 @@ const Home = () => {
     <div>
       <Head>
         <title>Alex | Inicio</title>
+
+        <meta name="theme-color" content="#000000" />
+
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
           rel="stylesheet"
         />
-        <meta name="theme-color" content="#000000" />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
           rel="stylesheet"
@@ -86,6 +88,8 @@ const Home = () => {
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
           rel="stylesheet"
         />
+
+        <link rel="icon" href="/static/favicon.ico" />
       </Head>
 
       {/* Button ScrolToTop */}
