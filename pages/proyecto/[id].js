@@ -92,7 +92,7 @@ const DivIconCategoria = styled.div`
   justify-content: center;
 `;
 
-const index = () => {
+const Index = () => {
   const [proyecto, setProyecto] = useState('');
   const [isloading, setIsLoading] = useState(true);
 
@@ -180,4 +180,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
