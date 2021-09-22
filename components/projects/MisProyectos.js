@@ -93,10 +93,6 @@ const MisProyectos = () => {
 
   const { proyectos, isloading, id } = useProyectos();
 
-  if (isloading) {
-    return <Loading />;
-  }
-
   return (
     <ContainerSupremo id="mis-proyectos">
       <Title>Mis últimos proyectos</Title>
@@ -108,7 +104,13 @@ const MisProyectos = () => {
         {proyectos.map((proyecto, index) => {
           return (
             <Card key={index}>
-              <img src={proyecto.Imagen[0].url} className="img-proyecto" />
+              <picture>
+                <img
+                  src={proyecto.Imagen[0].url}
+                  className="img-proyecto"
+                  loading="lazy"
+                />
+              </picture>
               <Link href={`/proyecto/${proyecto.id}`}>
                 <Button>
                   <a>Detalles</a>
