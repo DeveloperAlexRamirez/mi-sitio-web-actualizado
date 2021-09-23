@@ -86,8 +86,6 @@ const ContenedorCategoria = styled.div`
   padding: 1rem;
 `;
 
-const ImageProject = styled.image``;
-
 const MisProyectos = () => {
   const [otrosproyectos, setOtrosproyectos] = useState([]);
 

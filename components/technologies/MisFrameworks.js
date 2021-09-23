@@ -52,7 +52,7 @@ const MisFrameworks = () => {
 
       <ContenedorCards>
         {frameworks.map((f) => {
-          console.log(f.Tecnologia);
+          // console.log(f.Tecnologia);
           return (
             <Card key={f.id}>
               <picture>
