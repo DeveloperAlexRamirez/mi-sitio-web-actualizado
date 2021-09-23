@@ -117,8 +117,8 @@ const MisProyectos = () => {
                 />
                 <source
                   sizes="1920w"
-                  srcset={proyecto.Imagen[0].url}
-                  type="image/jpeg"
+                  srcset={proyecto.Imagen[1].url}
+                  type="image/png"
                 />
                 <img
                   loading="lazy"
