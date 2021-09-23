@@ -105,10 +105,27 @@ const MisProyectos = () => {
           return (
             <Card key={index}>
               <picture>
+                <source
+                  sizes="1920w"
+                  srcset={proyecto.Imagen[0].url}
+                  type="image/avif"
+                />
+                <source
+                  sizes="1920w"
+                  srcset={proyecto.Imagen[0].url}
+                  type="image/webp"
+                />
+                <source
+                  sizes="1920w"
+                  srcset={proyecto.Imagen[0].url}
+                  type="image/jpeg"
+                />
                 <img
-                  src={proyecto.Imagen[0].url}
-                  className="img-proyecto"
                   loading="lazy"
+                  decoding="async"
+                  src={proyecto.Imagen[0].url}
+                  lazyalt="imagen"
+                  className="img-proyecto"
                 />
               </picture>
               <Link href={`/proyecto/${proyecto.id}`}>
