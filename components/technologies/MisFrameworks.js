@@ -52,13 +52,30 @@ const MisFrameworks = () => {
 
       <ContenedorCards>
         {frameworks.map((f) => {
+          console.log(f.Tecnologia);
           return (
             <Card key={f.id}>
-              <img
-                src={`${f.Tecnologia[0].url}`}
-                alt={f.Nombre}
-                className="img-framework"
-              />
+              <picture>
+                <source
+                  sizes="1920w"
+                  srcSet={f.Tecnologia[1].url}
+                  type="image/png"
+                />
+
+                <source
+                  sizes="1920w"
+                  srcSet={f.Tecnologia[0].url}
+                  type="image/avif"
+                />
+
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={`${f.Tecnologia[0].url}`}
+                  alt={f.Nombre}
+                  className="img-framework"
+                />
+              </picture>
             </Card>
           );
         })}

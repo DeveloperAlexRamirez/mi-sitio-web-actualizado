@@ -102,24 +102,25 @@ const MisProyectos = () => {
 
       <CustomContenedorCards>
         {proyectos.map((proyecto, index) => {
+          // console.log(proyecto);
           return (
             <Card key={index}>
               <picture>
                 <source
                   sizes="1920w"
-                  srcset={proyecto.Imagen[0].url}
+                  srcSet={proyecto.Imagen[0].url}
                   type="image/avif"
                 />
                 <source
                   sizes="1920w"
-                  srcset={proyecto.Imagen[0].url}
+                  srcSet={proyecto.Imagen[0].url}
                   type="image/webp"
                 />
-                <source
+                {/* <source
                   sizes="1920w"
-                  srcset={proyecto.Imagen[1].url}
+                  srcSet={proyecto.Imagen[1].url}
                   type="image/png"
-                />
+                /> */}
                 <img
                   loading="lazy"
                   decoding="async"
