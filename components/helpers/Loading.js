@@ -11,13 +11,13 @@ const Loading = () => {
         height: '100vh',
       }}
     >
-      <ReactLoading
+      {/* <ReactLoading
         type="spin"
         color="#2dd2f7"
         height={50}
         width={50}
         delay={1.5}
-      />
+      /> */}
     </div>
   );
 };
