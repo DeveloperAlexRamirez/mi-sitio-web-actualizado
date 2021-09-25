@@ -10,7 +10,6 @@ import {
 
 import Link from 'next/link';
 import ReactLoading from 'react-loading';
-import Loading from '../helpers/Loading';
 import Image from 'next/image';
 
 const ContainerSupremo = styled.div`

@@ -38,10 +38,6 @@ const Card = styled.div`
 const MisFrameworks = () => {
   const { frameworks, isloading } = useFrameworks();
 
-  if (isloading) {
-    return null;
-  }
-
   return (
     <ContainerSupremo>
       <Title>Frameworks y tecnologías</Title>
