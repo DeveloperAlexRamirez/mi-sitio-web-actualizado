@@ -88,10 +88,10 @@ const ContenedorCategoria = styled.div`
   padding: 1rem;
 `;
 
-const MisProyectos = ({ proyectos, isloading }) => {
+const MisProyectos = ({ proyectos, isloadingProyectos }) => {
   return (
     <>
-      {isloading ? (
+      {isloadingProyectos ? (
         <Loading />
       ) : (
         <ContainerSupremo id="mis-proyectos">

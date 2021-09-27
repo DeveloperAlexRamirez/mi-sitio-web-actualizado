@@ -3,7 +3,7 @@ import { strapiDB } from '../pages/api/strapiDB';
 
 export const useProyectos = () => {
   const [proyectos, setProyectos] = useState([]);
-  const [isloading, setLoading] = useState(true);
+  const [isloadingProyectos, setLoading] = useState(true);
 
   const getImgProyectos = async () => {
     const resp = await strapiDB.get('/propiedades');
@@ -17,6 +17,6 @@ export const useProyectos = () => {
 
   return {
     proyectos,
-    isloading,
+    isloadingProyectos,
   };
 };

@@ -3,7 +3,7 @@ import { strapiDB } from '../pages/api/strapiDB';
 
 export const useFrameworks = () => {
   const [frameworks, setFrameworks] = useState([]);
-  const [isloading, setLoading] = useState(true);
+  const [isloadingFrameworks, setLoading] = useState(true);
 
   const getImgFrameworks = async () => {
     const resp = await strapiDB.get('/categorias');
@@ -17,6 +17,6 @@ export const useFrameworks = () => {
 
   return {
     frameworks,
-    isloading,
+    isloadingFrameworks,
   };
 };

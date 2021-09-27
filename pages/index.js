@@ -38,8 +38,8 @@ const Button = styled.button`
 
 const Home = () => {
   const [isactive, setIsActive] = useState(false);
-  const { proyectos, isloading } = useProyectos();
-  const { frameworks } = useFrameworks();
+  const { proyectos, isloadingProyectos } = useProyectos();
+  const { frameworks, isloadingFrameworks } = useFrameworks();
 
   const scrollTop = () => {
     window.scrollTo({
@@ -109,8 +109,14 @@ const Home = () => {
         <BannerImg />
         <SobreMi />
         <MisServicios />
-        <MisProyectos proyectos={proyectos} {isloading} />
-        <MisFrameworks frameworks={frameworks} isloading={isloading} />
+        <MisProyectos
+          proyectos={proyectos}
+          isloadingProyectos={isloadingProyectos}
+        />
+        <MisFrameworks
+          frameworks={frameworks}
+          isloadingFrameworks={isloadingFrameworks}
+        />
         <Formulario />
         <Footer />
       </Layout>
