@@ -12,6 +12,7 @@ import Link from 'next/link';
 import ReactLoading from 'react-loading';
 // import Image from 'next/image';
 import { Image, Transformation } from 'cloudinary-react';
+import Loading from '../helpers/Loading';
 
 const ContainerSupremo = styled.div`
   padding-top: 2rem;
@@ -87,46 +88,52 @@ const ContenedorCategoria = styled.div`
   padding: 1rem;
 `;
 
-const MisProyectos = ({ proyectos }) => {
+const MisProyectos = ({ proyectos, isloading }) => {
   return (
-    <ContainerSupremo id="mis-proyectos">
-      <Title>Mis últimos proyectos</Title>
-      <CustomTextoDescripcionCard>
-        Estos son algunos de los proyectos que he realizado.
-      </CustomTextoDescripcionCard>
+    <>
+      {isloading ? (
+        <Loading />
+      ) : (
+        <ContainerSupremo id="mis-proyectos">
+          <Title>Mis últimos proyectos</Title>
+          <CustomTextoDescripcionCard>
+            Estos son algunos de los proyectos que he realizado.
+          </CustomTextoDescripcionCard>
 
-      <CustomContenedorCards>
-        {proyectos.map((proyecto, index) => {
-          // console.log(proyecto.Imagen[0].hash);
-          return (
-            <Card key={index}>
-              <Image
-                secure="true"
-                cloudName="dmu2hhva6"
-                publicId={proyecto.Imagen[0].hash}
-                dpr="auto"
-                responsive
-                width="auto"
-                crop="thumb"
-                responsiveUseBreakpoints="false"
-                // width="350"
-                // height="250"
-                // // crop="thumb"
-                // gravity="face"
-                // fetchFormat="auto"
-                // quality="50"
-              />
+          <CustomContenedorCards>
+            {proyectos.map((proyecto, index) => {
+              // console.log(proyecto.Imagen[0].hash);
+              return (
+                <Card key={index}>
+                  <Image
+                    secure="true"
+                    cloudName="dmu2hhva6"
+                    publicId={proyecto.Imagen[0].hash}
+                    dpr="auto"
+                    responsive
+                    width="auto"
+                    crop="thumb"
+                    responsiveUseBreakpoints="false"
+                    // width="350"
+                    // height="250"
+                    // // crop="thumb"
+                    // gravity="face"
+                    // fetchFormat="auto"
+                    // quality="50"
+                  />
 
-              <Link href={`/proyecto/${proyecto.id}`}>
-                <Button>
-                  <a>Detalles</a>
-                </Button>
-              </Link>
-            </Card>
-          );
-        })}
-      </CustomContenedorCards>
-    </ContainerSupremo>
+                  <Link href={`/proyecto/${proyecto.id}`}>
+                    <Button>
+                      <a>Detalles</a>
+                    </Button>
+                  </Link>
+                </Card>
+              );
+            })}
+          </CustomContenedorCards>
+        </ContainerSupremo>
+      )}
+    </>
   );
 };
 

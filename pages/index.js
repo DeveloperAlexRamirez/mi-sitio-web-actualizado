@@ -109,7 +109,7 @@ const Home = () => {
         <BannerImg />
         <SobreMi />
         <MisServicios />
-        <MisProyectos proyectos={proyectos} />
+        <MisProyectos proyectos={proyectos} {isloading} />
         <MisFrameworks frameworks={frameworks} isloading={isloading} />
         <Formulario />
         <Footer />
