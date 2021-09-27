@@ -6,7 +6,8 @@ import {
   DescripcionCard,
 } from '../services/MisServicios';
 import Link from 'next/link';
-import Image from 'next/image';
+import { Image } from 'cloudinary-react';
+import Loading from '../helpers/Loading';
 
 const CustomDescripcionCard = styled(DescripcionCard)`
   text-align: center;
@@ -35,8 +36,10 @@ const Card = styled.div`
   padding: 0.5rem;
 `;
 
-const MisFrameworks = () => {
-  const { frameworks, isloading } = useFrameworks();
+const MisFrameworks = ({ frameworks, isloading }) => {
+  if (isloading) {
+    return <Loading />;
+  }
 
   return (
     <ContainerSupremo>
@@ -48,15 +51,26 @@ const MisFrameworks = () => {
 
       <ContenedorCards>
         {frameworks.map((f) => {
-          // console.log(f.Tecnologia);
+          // console.log(f.Tecnologia[0].formats.thumbnail.hash);
           return (
             <Card key={f.id}>
-              <img
+              {/* <img
                 loading="lazy"
                 decoding="async"
                 src={`${f.Tecnologia[0].url}`}
                 alt={f.Nombre}
                 className="img-framework"
+              /> */}
+
+              <Image
+                secure="true"
+                cloudName="dmu2hhva6"
+                publicId={f.Tecnologia[0].formats.thumbnail.hash}
+                dpr="auto"
+                responsive
+                width="auto"
+                crop="thumb"
+                responsiveUseBreakpoints="false"
               />
             </Card>
           );

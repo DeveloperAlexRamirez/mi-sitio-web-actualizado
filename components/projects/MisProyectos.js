@@ -11,7 +11,7 @@ import {
 import Link from 'next/link';
 import ReactLoading from 'react-loading';
 // import Image from 'next/image';
-import { Image } from 'cloudinary-react';
+import { Image, Transformation } from 'cloudinary-react';
 
 const ContainerSupremo = styled.div`
   padding-top: 2rem;
@@ -28,6 +28,7 @@ const CustomContenedorCards = styled(ContenedorCards)`
   max-width: 1500px;
   margin: 0 auto;
   justify-content: center;
+  padding: unset;
 `;
 
 export const Card = styled.div`
@@ -103,12 +104,17 @@ const MisProyectos = ({ proyectos }) => {
                 secure="true"
                 cloudName="dmu2hhva6"
                 publicId={proyecto.Imagen[0].hash}
-                width="400"
-                height="250"
-                // crop="thumb"
-                gravity="face"
-                fetchFormat="auto"
-                quality="50"
+                dpr="auto"
+                responsive
+                width="auto"
+                crop="thumb"
+                responsiveUseBreakpoints="false"
+                // width="350"
+                // height="250"
+                // // crop="thumb"
+                // gravity="face"
+                // fetchFormat="auto"
+                // quality="50"
               />
 
               <Link href={`/proyecto/${proyecto.id}`}>

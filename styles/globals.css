@@ -1,6 +1,21 @@
 :root {
   --typewriterSpeed: 3s;
-  --typewriterCharacters: 21;
+  --typewriterCharacters: 15;
+}
+
+p {
+  list-style: none;
+}
+
+img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container-tec img {
+  width: 60px;
+  height: 60px;
+  margin-right: 6px;
 }
 
 html,
@@ -71,16 +86,20 @@ a {
   }
 }
 
-.typing-demo {
+.write-h1 {
   position: relative;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: white;
   padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.6rem;
+  /* padding-right: 0.5rem; */
+  font-size: 1.5rem;
+  font-weight: 700;
+  max-width: max-content;
 }
 
-.typing-demo::before,
-.typing-demo::after {
+.write-h1::before,
+.write-h1::after {
   content: '';
   position: absolute;
   top: 0;
@@ -89,18 +108,17 @@ a {
   left: 0;
 }
 
-.typing-demo::before {
+.write-h1::before {
   overflow: hidden;
-  background: white;
-  padding: 2.5rem;
-  font-size: 1.3rem;
+  background: #191919;
+  padding: -0.5rem;
   animation: typewriter var(--typewriterSpeed)
     steps(var(--typewriterCharacters)) 1s forwards;
 }
 
-.typing-demo::after {
+.write-h1::after {
   width: 0.125em;
-  background: black;
+  background: white;
   animation: typewriter var(--typewriterSpeed)
       steps(var(--typewriterCharacters)) 1s forwards,
     blink 750ms steps(var(--typewriterCharacters)) infinite;
@@ -115,6 +133,71 @@ a {
 @keyframes blink {
   to {
     background-color: white;
+  }
+}
+
+.subtitle {
+  font-family: 'Poppins', sans-serif;
+  color: #30d3f0;
+  font-weight: 700;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+}
+
+@media screen and (min-width: 468px) {
+  .write-h1 {
+    font-size: 2rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.9rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .write-h1 {
+    font-size: 2.2rem;
+    padding-top: 0.8rem;
+    padding-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .write-h1 {
+    font-size: 3.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 2.5rem;
+  }
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

@@ -149,14 +149,22 @@ const Index = () => {
                 <TextoDetalles>{Descripcion}</TextoDetalles>
                 <H3>Categoría</H3>
                 <BCategoria>{categorias[0].Nombre}</BCategoria>
-                <div style={{ flexDirection: 'row' }}>
+                <div
+                  style={{
+                    flexDirection: 'row',
+                  }}
+                  className="container-tec"
+                >
                   {categorias.map((c, i) => (
-                    <img
-                      src={`${c.Tecnologia[0].url}`}
-                      alt={c.id}
-                      className="img-categoria"
+                    <Image
                       key={c.id}
-                      style={{ marginRight: '6px' }}
+                      secure="true"
+                      cloudName="dmu2hhva6"
+                      publicId={c.Tecnologia[0].formats.thumbnail.hash}
+                      // crop="thumb"
+                      gravity="face"
+                      fetchFormat="auto"
+                      quality="60"
                     />
                   ))}
                 </div>
@@ -167,11 +175,6 @@ const Index = () => {
                 {ImagenDetalle.map(({ id, url, formats }) => {
                   return (
                     <Card key={id}>
-                      {/* <img
-                        src={`${formats.small.hash}`}
-                        alt={id}
-                        className="img-proyecto"
-                      /> */}
                       <Image
                         secure="true"
                         cloudName="dmu2hhva6"

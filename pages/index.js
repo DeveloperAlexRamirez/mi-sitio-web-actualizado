@@ -13,6 +13,7 @@ import styled from '@emotion/styled';
 import * as IoIosIcons from 'react-icons/io';
 import Footer from '../components/footer/Footer';
 import { useProyectos } from '../hooks/useProyectos';
+import { useFrameworks } from '../hooks/useFrameworks';
 
 const DivButton = styled.div`
   position: fixed;
@@ -38,6 +39,7 @@ const Button = styled.button`
 const Home = () => {
   const [isactive, setIsActive] = useState(false);
   const { proyectos, isloading } = useProyectos();
+  const { frameworks } = useFrameworks();
 
   const scrollTop = () => {
     window.scrollTo({
@@ -108,7 +110,7 @@ const Home = () => {
         <SobreMi />
         <MisServicios />
         <MisProyectos proyectos={proyectos} />
-        <MisFrameworks />
+        <MisFrameworks frameworks={frameworks} isloading={isloading} />
         <Formulario />
         <Footer />
       </Layout>
