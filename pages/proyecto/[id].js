@@ -12,6 +12,8 @@ import {
 
 import { strapiDB } from '../api/strapiDB';
 
+import { Image } from 'cloudinary-react';
+
 const Header = styled(ContainerSupremo)`
   margin-top: 3rem;
   display: flex;
@@ -100,7 +102,7 @@ const Index = () => {
 
   const pathStrapi = 'https://mi-app-strapi-heroku.herokuapp.com';
 
-  // TODO: obtiener el id mediante el query(url)
+  // TODO: obtiene el id mediante el query(url)
   const router = useRouter();
 
   const {
@@ -162,10 +164,25 @@ const Index = () => {
 
               <H2>Galería</H2>
               <ContenedorCards>
-                {ImagenDetalle.map(({ id, url }) => {
+                {ImagenDetalle.map(({ id, url, formats }) => {
                   return (
                     <Card key={id}>
-                      <img src={`${url}`} alt={id} className="img-proyecto" />
+                      {/* <img
+                        src={`${formats.small.hash}`}
+                        alt={id}
+                        className="img-proyecto"
+                      /> */}
+                      <Image
+                        secure="true"
+                        cloudName="dmu2hhva6"
+                        publicId={formats.small.hash}
+                        width="220"
+                        height="450"
+                        // crop="thumb"
+                        gravity="face"
+                        fetchFormat="auto"
+                        quality="60"
+                      />
                     </Card>
                   );
                 })}

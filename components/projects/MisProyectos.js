@@ -10,7 +10,8 @@ import {
 
 import Link from 'next/link';
 import ReactLoading from 'react-loading';
-import Image from 'next/image';
+// import Image from 'next/image';
+import { Image } from 'cloudinary-react';
 
 const ContainerSupremo = styled.div`
   padding-top: 2rem;
@@ -85,11 +86,7 @@ const ContenedorCategoria = styled.div`
   padding: 1rem;
 `;
 
-const MisProyectos = () => {
-  const [otrosproyectos, setOtrosproyectos] = useState([]);
-
-  const { proyectos, isloading, id } = useProyectos();
-
+const MisProyectos = ({ proyectos }) => {
   return (
     <ContainerSupremo id="mis-proyectos">
       <Title>Mis últimos proyectos</Title>
@@ -99,15 +96,21 @@ const MisProyectos = () => {
 
       <CustomContenedorCards>
         {proyectos.map((proyecto, index) => {
+          // console.log(proyecto.Imagen[0].hash);
           return (
             <Card key={index}>
-              <img
-                loading="lazy"
-                decoding="async"
-                src={proyecto.Imagen[0].url}
-                lazyalt="imagen"
-                className="img-proyecto"
+              <Image
+                secure="true"
+                cloudName="dmu2hhva6"
+                publicId={proyecto.Imagen[0].hash}
+                width="400"
+                height="250"
+                // crop="thumb"
+                gravity="face"
+                fetchFormat="auto"
+                quality="50"
               />
+
               <Link href={`/proyecto/${proyecto.id}`}>
                 <Button>
                   <a>Detalles</a>

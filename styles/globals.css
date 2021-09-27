@@ -1,3 +1,8 @@
+:root {
+  --typewriterSpeed: 3s;
+  --typewriterCharacters: 21;
+}
+
 html,
 body {
   padding: 0;
@@ -20,6 +25,7 @@ a {
   height: 40vh;
   width: 100%;
   background-image: url('../public/assets/banner.jpeg');
+  /* background-color: white; */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -66,22 +72,64 @@ a {
 }
 
 .typing-demo {
-  width: 21.5ch;
-  animation: typing 2s steps(30), blink 0.5s step-end infinite alternate;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.typing-demo::before,
+.typing-demo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.typing-demo::before {
+  overflow: hidden;
+  background: white;
+  padding: 2.5rem;
+  font-size: 1.3rem;
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+.typing-demo::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background-color: white;
+  }
+}
+
+/* .typing-demo {
+  width: max-content;
+  animation: typing 2s steps(21), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
   font-family: 'Montserrat', sans-serif;
+  padding-top: 1.5rem;
   font-size: 1.3rem;
   height: 1rem;
-  padding-top: 1.5rem;
   padding-bottom: 3.5rem;
-}
-
-@media screen and (min-width: 1024px) {
-  .typing-demo {
-    font-size: 2rem;
-  }
+  color: white;
 }
 
 @keyframes typing {
@@ -91,35 +139,7 @@ a {
   to {
     width: 100%;
   }
-}
-
-@media screen and (min-width: 768px) {
-  .typing-demo {
-    width: 21.5ch;
-    font-size: 3rem;
-    height: 3rem;
-  }
-}
-
-@media screen and (min-width: 1636px) {
-  .typing-demo {
-    width: 21.4ch;
-    font-size: 4rem;
-    height: 3rem;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
+} */
 
 .textoPrincipal {
   color: #30d3f0;

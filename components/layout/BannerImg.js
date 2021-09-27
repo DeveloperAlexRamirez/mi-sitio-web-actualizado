@@ -5,7 +5,7 @@ const ContainerText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: auto;
   /* margin: 0 auto; */
   font-family: 'Poppins', sans-serif;
   /* padding-bottom: 7rem; */
@@ -17,7 +17,7 @@ const ContainerText = styled.div`
     font-size: 1.5rem;
 
     padding-left: 10rem;
-    width: 80%;
+    width: auto;
   }
 
   @media (min-width: 1280px) {
@@ -35,7 +35,7 @@ const BannerImg = () => {
     <div className="imgBanner">
       <ContainerText>
         <h1 style={{ color: 'white', margin: 0 }}>Hola, soy Alex</h1>
-        <h1 className="typing-demo textoPrincipal">{textoPrincipal}</h1>
+        <p className="typing-demo">{textoPrincipal}</p>
       </ContainerText>
     </div>
   );
