@@ -179,8 +179,8 @@ const Index = () => {
                         secure="true"
                         cloudName="dmu2hhva6"
                         publicId={formats.small.hash}
-                        width="220"
-                        height="450"
+                        // width="220"
+                        // height="450"
                         // crop="thumb"
                         gravity="face"
                         fetchFormat="auto"
