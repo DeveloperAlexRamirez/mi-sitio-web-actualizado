@@ -2,6 +2,9 @@ import styled from '@emotion/styled';
 import IconsRedes from '../layout/IconsRedes';
 import { ContainerSupremo } from '../services/MisServicios';
 import { redes } from '../redes/redes';
+import Image from 'next/image';
+import favicon from '../../static/favicon.ico';
+import Link from 'next/link';
 
 const ContenedorFooter = styled.div`
   display: flex;
@@ -23,7 +26,13 @@ const Footer = (props) => {
   return (
     <ContainerSupremo>
       <ContenedorFooter>
-        <CardFooter style={{ color: 'white', flex: 1 }}></CardFooter>
+        <CardFooter style={{ color: 'white', flex: 1 }}>
+          <Link href="/">
+            <a>
+              <Image src={favicon} alt="logo" width="50" height="50" />
+            </a>
+          </Link>
+        </CardFooter>
         <CardFooter style={{ color: 'white', flex: 1 }}>
           <p>Todos los derechos reservados &copy; {year}</p>
         </CardFooter>

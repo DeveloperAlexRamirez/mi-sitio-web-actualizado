@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import styled from '@emotion/styled';
+import favicon from '../../static/favicon.ico';
+import Image from 'next/image';
 
 const Li = styled.li`
   font-family: 'Poppins', sans-serif;
@@ -10,6 +12,13 @@ const Li = styled.li`
 const Secciones = () => {
   return (
     <>
+      <Li>
+        <Link href="/">
+          <a>
+            <Image src={favicon} alt="logo" width="30" height="30" />
+          </a>
+        </Link>
+      </Li>
       <Li>
         <Link href="/#">Inicio</Link>
       </Li>

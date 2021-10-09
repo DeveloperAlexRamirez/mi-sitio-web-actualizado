@@ -44,6 +44,7 @@ const UlSecciones = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 
   @media (min-width: 768px) {
     display: flex;
